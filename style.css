@@ -386,18 +386,18 @@ body {
     margin: 1rem 0 1.5rem;
 }
 
-.portfolio-box .info-box .info title {
+.portfolio-box .info-box .info-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
 }
 
-.portfolio-box .info-box .info title h3 {
+.portfolio-box .info-box .info-title h3 {
     font-size: 1.3rem;
 }
 
-.portfolio-box .info-box .info title a {
+.portfolio-box .info-box .info-title a {
     display: flex;
     align-items: center;
     color: var(--main-color);
@@ -480,7 +480,7 @@ body {
 .back-profile:hover p {
     opacity: 1;
     transform: translateX(-50%) scale(1);
-    top: -1.8rem;
+    top: -1.8rem;
 }
 
 
