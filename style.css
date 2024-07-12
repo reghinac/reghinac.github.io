@@ -11,14 +11,14 @@
 }
 
 :root {
-    --bg-color: #081b29;
-    --main-color: #00abf0;
+    --bg-color: #29081a;
+    --main-color: #f07fb7;
     --text-color: #333;
     --second-text-color: #555;
     --white-color: #fff;
-    --cover-color: linear-gradient(45deg, #00abf0, #006e9a);
+    --cover-color: linear-gradient(45deg, #ec67aa, #ed6fae);
     --pages-color: linear-gradient(90deg, #fff, #ddd);
-    --border: .125rem solid #00abf0;
+    --border: .125rem solid #ee368f;
     --box-shadow: 0 0 .6rem rgba(0, 0, 0, .2);
 }
 
@@ -117,6 +117,8 @@ body {
 .profile-page h1 {
     font-size: 2.7rem;
     line-height: 1;
+    color: #ec3a7b;
+
 }
 
 .profile-page h3 {
@@ -221,6 +223,7 @@ body {
 .title {
     text-align: center;
     margin-bottom: 1rem;
+    color: #ec3a7b;
 }
 
 .workeduc-box {
@@ -391,6 +394,8 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
+    color: #ec3a7b;
+
 }
 
 .portfolio-box .info-box .info-title h3 {
@@ -482,6 +487,11 @@ body {
     transform: translateX(-50%) scale(1);
     top: -1.8rem;
 }
+
+
+
+
+
 
 
 
