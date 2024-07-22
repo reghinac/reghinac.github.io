@@ -133,32 +133,76 @@
                     <h1 class="title">My Services</h1>
 
                     <div class="services-box">
-                        <div class="services-content">
+                        <div class="services-content"> 
                             <i class='bx bx-code-alt'></i>
                             <h3>Web Development</h3>
                             <p>Layanan pembuatan dan pengembangan situs web.</p>
-                            <a href="#" class="btn">Read More</a>
+                            <div class="read-more-cont">
+                                <p>Sebagai pengembang web, saya menawarkan layanan pembuatan dan pengembangan situs web yang responsif dan fungsional. Saya memastikan setiap situs web dirancang dengan memperhatikan pengalaman pengguna dan dioptimalkan untuk kinerja yang optimal di berbagai perangkat.</p>
+                                <p><b>Layanan Termasuk:</b>
+                                    <br>1. Pengembangan situs web kustom
+                                    <br>2. Desain responsif
+                                    <br>3. Pengembangan aplikasi web
+                                    <br>4. Pemeliharaan dan dukungan situs web
+                                    <br>5. Optimasi kecepatan dan kinerja</p>
+                                <p><b>Teknologi yang Digunakan:</b>
+                                    <br>1. HTML5, CSS3, JavaScript
+                                    <br>2. Framework: React, Angular, Vue.js
+                                    <br>3. Backend: Node.js, Express, Django, Ruby on Rails
+                                    <br>4. Database: MySQL, PostgreSQL, MongoDB
+                                    <br>5. Alat: Git, Docker, Webpack</p>
+                            </div>
+                            <button class="btn" type="button">Read More</button>
                         </div>
 
                         <div class="services-content">
                             <i class='bx bxs-paint'></i>
                             <h3>Creative Design</h3>
                             <p>Layanan desain kreatif untuk membantu bisnis Anda.</p>
-                            <a href="#" class="btn">Read More</a>
+                            <div class="read-more-cont">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                                    Recusandae ratione magni saepe ea modi minus repellat asperiores? Voluptas, dolore aliquam ex explicabo mollitia tenetur quo optio, ducimus dolorem eum obcaecati.</p>
+                            </div>
+                            <button class="btn" type="button">Read More</button>
                         </div>
 
                         <div class="services-content">
                             <i class='bx bx-bar-chart-alt'></i>
                             <h3>Digital Marketing</h3>
                             <p>Solusi pemasaran digital yang komprehensif .</p>
-                            <a href="#" class="btn">Read More</a>
+                            <div class="read-more-cont">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                                    Recusandae ratione magni saepe ea modi minus repellat asperiores? Voluptas, dolore aliquam ex explicabo mollitia tenetur quo optio, ducimus dolorem eum obcaecati.</p>
+                            </div>
+                            <button class="btn" type="button">Read More</button>
                         </div>
 
                         <div class="services-content">
                             <i class='bx bx-search'></i>
                             <h3>App Development</h3>
                             <p>Layanan pengembangan aplikasi mobie.</p>
-                            <a href="#" class="btn">Read More</a>
+                            <div class="read-more-cont">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                                    Recusandae ratione magni saepe ea modi minus repellat asperiores? Voluptas, dolore aliquam ex explicabo mollitia tenetur quo optio, ducimus dolorem eum obcaecati.</p>
+                            </div>
+                            <button class="btn" type="button">Read More</button>
+                        </div>
+                    </div>
+
+                    <!-- read more popup box start -->
+                    <div class="popup-box">
+                        <div class="popup-content">
+                            <div class="popup-header">
+                                <h3>Web Development</h3>
+                                <span class="popup-close-icon">&times;</span>
+                            </div>
+                            <div class="popup-body">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit pariatur, eligendi, esse consectetur 
+                                itaque tenetur ducimus eum perspiciatis, necessitatibus fugit soluta similique ab velit? Dicta labore a sint accusantium asperiores.</p>
+                            </div>
+                            <div class="popup-footer">
+                                <button class="btn popup-close-btn">Close</button>   
+                            </div>
                         </div>
                     </div>
 
@@ -237,7 +281,7 @@
     
                                 <div class="btn-box">
                                     <a href="https://github.com/reghinac/flower.github.io" class="btn">Source Code</a>
-                                    <a href="#" class="btn">More Projects</a>
+                                    <a href="https://www.figma.com/design/HO0K0T1tIdreuJemN4Y4GJ/TUGAS-CATATAN-REGHINA?node-id=0-1&t=gE5GcLtW81nvco9Z-0" class="btn">More Projects</a>
                                 </div>
                             </div>
 
@@ -255,9 +299,10 @@
 
                         <div class="contact-box">
                             <form action="#">
-                                <input type="text" class="field" placeholder="Full Name" required>
+                                <input type="text" class="field
+                                " placeholder="Full Name" required>
                                 <input type="email" class="field" placeholder="Email Address" required>
-                                <textarea name="" id="" cols="30" rows="10" class="field" placeholder="Your Message" required></textarea>
+                                <textarea name="" id="message" cols="30" rows="10" class="field" placeholder="Your Message" required></textarea>
                                 <input type="submit" class="btn" value="Send Message">
                             </form>
                         </div>   
@@ -278,7 +323,7 @@
         </div>
     </div>
 
-
+    <script src="https://smtpjs.com/v3/stmp.js"></script>
     <script src="script.js"></script>
 </body>
 

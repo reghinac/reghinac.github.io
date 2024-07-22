@@ -300,6 +300,10 @@ body {
     transition: .3ease;
 }
 
+.services-box .services-content .read-more-cont {
+    display: none;
+}
+
 .services-box .services-content:hover {
     box-shadow: var(--box-shadow);
 }
@@ -310,7 +314,9 @@ body {
 }
 
 .services-content h3 {
-    font-size: 1.1rem;;
+    font-size: 1.1rem;
+    color: #ec3a7b;
+
 }
 
 .services-content p {
@@ -320,6 +326,95 @@ body {
 .services-content btn {
     width: 8rem;
     height: 2.5rem;
+}
+
+.popup-box {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 500;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.popup-box.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup-box .popup-content {
+   background-color: #ffffff; 
+   width: 440px;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   border-radius: 8px;
+   border: var(--border);
+}
+
+.popup-box .popup-header {
+   padding: 15px 40px 15px 15px;
+   border-bottom: 2px solid #ec3a7b;
+}
+
+.popup-box .popup-header h3 {
+    margin: 0;
+    color: #ec3a7b;
+    font-size: 20px;
+}
+
+.popup-box .popup-header .popup-close-icon {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    color: #ec3a7b;
+    font-size: 28px;
+    line-height: 30px;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+}
+
+.popup-box .popup-body {
+    padding: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.popup-box .popup-body p {
+    font-size: 16px;
+    margin: 0 0 15px;
+}
+
+.popup-box .popup-footer {
+    padding: 15px;
+    border-top: 2px solid #ec3a7b;
+    text-align: right;
+}
+
+.popup-box .popup-footer .btn {
+    padding: 8px 15px;
+    border: 2px solid #ec3a7b;
+    color: #ec3a7b;
+    font-size: 16px;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: .3rem;
+    background: var(--main-color);
+    color: var(--white-color);
+    
+}
+
+.popup-box .popup-footer .btn:hover {
+    outline: none;
+    background-color: transparent;
+    color: var(--main-color);
 }
 
 .skills-box {
@@ -487,7 +582,6 @@ body {
     transform: translateX(-50%) scale(1);
     top: -1.8rem;
 }
-
 
 
 
