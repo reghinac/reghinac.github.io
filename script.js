@@ -100,30 +100,43 @@ pages.forEach((_, index) => {
     }, (index + 1) * 200 + 2100)
 }) 
 
-const servicesContent = document.querySelector(".services-content");
-const popup = document.querySelector(".popup-box");
-const popupCloseBtn = popup.querySelector(".popup-close-btn");
-const popupCloseIcon = popup.querySelector(".popup-close-icon");
+document.addEventListener('DOMContentLoaded', function () {
+    const readMoreButtons = document.querySelectorAll('.btn');
+    const popupBox = document.querySelector('.popup-box');
+    const popupHeader = document.querySelector('.popup-header h3');
+    const popupBody = document.querySelector('.popup-body');
+    const popupCloseIcon = document.querySelector('.popup-close-icon');
+    const popupCloseBtn = document.querySelector('.popup-close-btn');
 
-servicesContent.addEventListener("click", function(event){
-    if(event.target.tagName.toLowerCase() == "button"){
-        const content = event.target.parentElement;
-        const h3 = content.querySelector("h3").innerHTML;
-        const readMoreCont = content.querySelector(".read-more-cont").innerHTML;
-        popup.querySelector("h3").innerHTML = h3;
-        popup.querySelector(".popup-body").innerHTML = readMoreCont;
-        popupBox();
+    // Function to show the popup with the correct content
+    function showPopup(serviceTitle, serviceContent) {
+        popupHeader.textContent = serviceTitle;
+        popupBody.innerHTML = serviceContent;
+        popupBox.classList.add('open');
     }
-})
 
-popupCloseBtn.addEventListener("click", popupBox);
-popupCloseIcon.addEventListener("click", popupBox);
+    // Add event listeners to each "Read More" button
+    readMoreButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const serviceContentDiv = this.parentElement;
+            const serviceTitle = serviceContentDiv.querySelector('h3').textContent;
+            const serviceContent = serviceContentDiv.querySelector('.read-more-cont').innerHTML;
+            showPopup(serviceTitle, serviceContent);
+        });
+    });
 
-popup.addEventListener("click", function(event) {
-    if(event.target == popup) {
-       popupBox();
+    // Add event listeners to close the popup
+    function closePopup() {
+        popupBox.classList.remove('open');
     }
-})
-function popupBox() {
-    popup.classList.toggle("open");
-}
+
+    popupCloseIcon.addEventListener('click', closePopup);
+    popupCloseBtn.addEventListener('click', closePopup);
+
+    // Close the popup when clicking outside the popup content
+    window.addEventListener('click', function (e) {
+        if (e.target === popupBox) {
+            closePopup();
+        }
+    });
+});
