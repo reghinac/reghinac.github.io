@@ -141,48 +141,29 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// function generateText() {
-//     // Ambil elemen form
-//     var form = document.getElementById('myForm');
+function handleSubmit(event) {
+    event.preventDefault();
     
-//     // Ambil nilai dari form
-//     var name = form.elements['name'].value;
-//     var email = form.elements['email'].value;
-    
-//     // Buat format teks
-//     var text = "Name: " + name + "\n" + "Email: " + email;
-    
-//     // Tampilkan hasil di elemen <p> dengan id "output"
-//     document.getElementById('output').innerText = text;
-// }
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
 
-function generateAndSaveText() {
-    // Ambil elemen form
-    var form = document.getElementById('myForm');
-    
-    // Ambil nilai dari form
-    var name = form.elements['name'].value;
-    var email = form.elements['email'].value;
-    var message = form.elements['message'].value;
-    
-    // Buat format teks
-    var text = "Name: " + name + "\n" + "Email: " + email + "\n" + "Message: " + message;
-    
-    // Buat Blob dari teks
-    var blob = new Blob([text], { type: 'text/plain' });
-    
-    // Buat link untuk download file
-    var link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = 'contact-me.txt';
-    
-    // Tambahkan link ke DOM dan klik link untuk memulai download
-    document.body.appendChild(link);
-    link.click();
-    
-    // Hapus link setelah download
-    document.body.removeChild(link);
-    
-    // Bebaskan URL Object
-    URL.revokeObjectURL(link.href);
+    const formData = {
+        name: name,
+        email: email,
+        message: message
+    };
+
+    let messages = localStorage.getItem('messages');
+    if (!messages) {
+        messages = [];
+    } else {
+        messages = JSON.parse(messages);
+    }
+
+    messages.push(formData);
+    localStorage.setItem('messages', JSON.stringify(messages));
+
+    window.location.href = 'messages.html';
 }
+

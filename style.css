@@ -386,6 +386,12 @@ body {
     overflow-y: auto;
 }
 
+.popup-box .popup-body img {
+    width: 100%;
+    display: block;
+    margin-top: 15px;
+}
+
 .popup-box .popup-body p {
     font-size: 16px;
     margin: 0 0 15px;
