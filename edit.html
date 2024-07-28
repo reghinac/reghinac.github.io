@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Message</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #29081a;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .edit-form {
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+        }
+        .edit-form h2 {
+            margin-top: 0;
+            text-align: center;
+            color: #333;
+        }
+        .edit-form input, .edit-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .edit-form button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .edit-form button.save {
+            background-color: #28a745;
+            color: white;
+        }
+        .edit-form button.save:hover {
+            background-color: #218838;
+        }
+        .edit-form button.cancel {
+            background-color: #dc3545;
+            color: white;
+        }
+        .edit-form button.cancel:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="edit-form">
+        <h2>Edit Message</h2>
+        <form id="editForm">
+            <input type="hidden" id="editIndex">
+            <input id="editName" type="text" placeholder="Full Name" required>
+            <input id="editEmail" type="email" placeholder="Email Address" required>
+            <textarea id="editMessage" placeholder="Your Message" required></textarea>
+            <button type="submit" class="save">Save Changes</button>
+            <button type="button" class="cancel" onclick="cancelEdit()">Cancel</button>
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var editIndex = localStorage.getItem('editIndex');
+            var messages = JSON.parse(localStorage.getItem('messages'));
+            var message = messages[editIndex];
+
+            document.getElementById('editIndex').value = editIndex;
+            document.getElementById('editName').value = message.name;
+            document.getElementById('editEmail').value = message.email;
+            document.getElementById('editMessage').value = message.message;
+
+            document.getElementById('editForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                messages[editIndex] = {
+                    name: document.getElementById('editName').value,
+                    email: document.getElementById('editEmail').value,
+                    message: document.getElementById('editMessage').value
+                };
+                localStorage.setItem('messages', JSON.stringify(messages));
+                localStorage.removeItem('editIndex');
+                window.location.href = 'messages.html';
+            });
+        });
+
+        function cancelEdit() {
+            localStorage.removeItem('editIndex');
+            window.location.href = 'messages.html';
+        }
+    </script>
+</body>
+</html>
