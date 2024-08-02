@@ -262,6 +262,9 @@ body {
     transform: translateX(-50%);
 }
 
+.text {
+    font-size: 1rem;
+}
 .nextprev-btn {
     position: absolute;
     bottom: .9rem;
