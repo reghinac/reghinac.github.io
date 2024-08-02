@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Messages</title>
+    <title>Pesan</title>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
@@ -37,7 +37,6 @@
         tr {
             background-color: #f2f2f2;
         }
-
         tr:hover {
             background-color: #f1558e;
             color: #f2f2f2;
@@ -77,14 +76,14 @@
     </style>
 </head>
 <body>
-    <h1>Messages</h1>
+    <h1>Pesan</h1>
     <table id="messagesTable">
         <thead>
             <tr>
-                <th>Name</th>
+                <th>Nama</th>
                 <th>Email</th>
-                <th>Message</th>
-                <th>Actions</th>
+                <th>Pesan</th>
+                <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
@@ -112,7 +111,7 @@
                     cell4.innerHTML = `
                         <div class="actions">
                             <button class="edit" onclick="editMessage(${index})">Edit</button>
-                            <button class="delete" onclick="deleteMessage(${index})">Delete</button>
+                            <button class="delete" onclick="deleteMessage(${index})">Hapus</button>
                         </div>
                     `;
                 });
