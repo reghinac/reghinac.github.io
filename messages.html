@@ -17,12 +17,17 @@
             text-align: center;
             color: #fef9f9;
         }
+        .table-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch; /* Untuk scrolling yang lebih halus pada perangkat sentuh */
+        }
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
             box-shadow: 0 2px 3px rgba(0,0,0,0.1);
             border-radius: 10px;
+            min-width: 600px;
         }
         th, td {
             padding: 12px 15px;
@@ -53,11 +58,9 @@
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
-            color:#f2f2f2;
+            color: #f2f2f2;
             border: 2.5px solid #ff005d;
-
         }
-
         .actions button.edit {
             background-color: #f75a9e;
         }
@@ -70,6 +73,19 @@
         .actions button.delete:hover {
             background-color: #f02337;
         }
+        .actions a.back {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #f2f2f2;
+            background-color: #f1558e;
+            border: 2.5px solid #f21e6c;
+            border-radius: 4px;
+        }
+        .actions a.back:hover {
+            background-color: #ef3c9c;
+        }
         .edit-form {
             display: none;
         }
@@ -77,19 +93,24 @@
 </head>
 <body>
     <h1>Pesan</h1>
-    <table id="messagesTable">
-        <thead>
-            <tr>
-                <th>Nama</th>
-                <th>Email</th>
-                <th>Pesan</th>
-                <th>Aksi</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Messages will be loaded here -->
-        </tbody>
-    </table>
+    <div class="table-wrapper">
+        <table id="messagesTable">
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Email</th>
+                    <th>Pesan</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Messages will be loaded here -->
+            </tbody>
+        </table>
+    </div>
+    <div class="actions">
+        <a href="index.html" class="back">Kembali</a>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -131,6 +152,5 @@
             loadMessages();
         });
     </script>
-    
 </body>
 </html>
