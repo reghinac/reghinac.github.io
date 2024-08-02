@@ -132,10 +132,16 @@
                     cell4.innerHTML = `
                         <div class="actions">
                             <button class="edit" onclick="editMessage(${index})">Edit</button>
-                            <button class="delete" onclick="deleteMessage(${index})">Hapus</button>
+                            <button class="delete" onclick="confirmDelete(${index})">Hapus</button>
                         </div>
                     `;
                 });
+            }
+    
+            window.confirmDelete = function(index) {
+                if (confirm("Apakah Anda yakin ingin menghapus pesan ini?")) {
+                    deleteMessage(index);
+                }
             }
     
             window.deleteMessage = function(index) {
