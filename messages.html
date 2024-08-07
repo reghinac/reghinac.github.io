@@ -12,71 +12,20 @@
             background-color: #29081a;
             margin: 0;
             padding: 20px;
-        }
-        h1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             text-align: center;
             color: #fef9f9;
         }
-        .table-wrapper {
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch; /* Untuk scrolling yang lebih halus pada perangkat sentuh */
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
-            border-radius: 10px;
-            min-width: 600px;
-        }
-        th, td {
-            padding: 12px 15px;
-            border: 2.5px solid #f21e6c;
-            text-align: left;
-        }
-        th {
-            background-color: #f1558e;
-            color: white;
-            font-weight: bold;
-        }
-        tr {
-            background-color: #f2f2f2;
-        }
-        tr:hover {
-            background-color: #f1558e;
-            color: #f2f2f2;
-        }
-        .actions {
-            display: flex;
-            gap: 10px;
-        }
-        .actions button {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            color: #f2f2f2;
-            border: 2.5px solid #ff005d;
-        }
-        .actions button.edit {
-            background-color: #f75a9e;
-        }
-        .actions button.delete {
-            background-color: #ff4e5a;
-        }
-        .actions button.edit:hover {
-            background-color: #ef3c9c;
-        }
-        .actions button.delete:hover {
-            background-color: #f02337;
+        h1 {
+            color: #fef9f9;
         }
         .actions a.back {
             display: inline-block;
             padding: 10px 20px;
-            margin-top: 10px;
+            margin-top: 20px;
             text-decoration: none;
             color: #f2f2f2;
             background-color: #f1558e;
@@ -86,76 +35,23 @@
         .actions a.back:hover {
             background-color: #ef3c9c;
         }
-        .edit-form {
-            display: none;
+        .center-content {
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <h1>Pesan</h1>
-    <div class="table-wrapper">
-        <table id="messagesTable">
-            <thead>
-                <tr>
-                    <th>Nama</th>
-                    <th>Email</th>
-                    <th>Pesan</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Messages will be loaded here -->
-            </tbody>
-        </table>
-    </div>
-    <div class="actions">
-        <a href="index.html" class="back">Kembali</a>
+    <div class="center-content">
+        <div id="thankYouMessage"><h1>Terima Kasih Telah Mengirimkan Pesan!</h1></div>
+        <div class="actions">
+            <a href="index.html" class="back">Kembali</a>
+        </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            var messages = JSON.parse(localStorage.getItem('messages')) || [];
-            var tableBody = document.getElementById('messagesTable').getElementsByTagName('tbody')[0];
-    
-            function loadMessages() {
-                tableBody.innerHTML = '';
-                messages.forEach(function(message, index) {
-                    var row = tableBody.insertRow();
-                    row.dataset.index = index;
-                    var cell1 = row.insertCell(0);
-                    var cell2 = row.insertCell(1);
-                    var cell3 = row.insertCell(2);
-                    var cell4 = row.insertCell(3);
-                    cell1.textContent = message.name;
-                    cell2.textContent = message.email;
-                    cell3.textContent = message.message;
-                    cell4.innerHTML = `
-                        <div class="actions">
-                            <button class="edit" onclick="editMessage(${index})">Edit</button>
-                            <button class="delete" onclick="confirmDelete(${index})">Hapus</button>
-                        </div>
-                    `;
-                });
-            }
-    
-            window.confirmDelete = function(index) {
-                if (confirm("Apakah Anda yakin ingin menghapus pesan ini?")) {
-                    deleteMessage(index);
-                }
-            }
-    
-            window.deleteMessage = function(index) {
-                messages.splice(index, 1);
-                localStorage.setItem('messages', JSON.stringify(messages));
-                loadMessages();
-            }
-    
-            window.editMessage = function(index) {
-                localStorage.setItem('editIndex', index);
-                window.location.href = 'edit.html';
-            }
-    
-            loadMessages();
+            // Menampilkan pesan terima kasih
+            alert('Terima Kasih!');
         });
     </script>
 </body>
